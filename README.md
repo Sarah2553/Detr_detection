@@ -103,11 +103,6 @@ python detect_animals.py --help
 
 ---
 
-## 📄 License
-
-See [LICENSE](LICENSE) for details.
-
----
 
 ## 🤗 Credits
 
@@ -115,10 +110,6 @@ See [LICENSE](LICENSE) for details.
 - PyTorch Ecosystem
 - Open-source contributors
 
----
 
-## ❓ Questions
-
-Feel free to open issues or discussions for bug reports and enhancement ideas!
 
 
