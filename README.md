@@ -80,9 +80,7 @@ python video_detr_detection.py --video_path path/to/your/video.mp4
 - `--filter_classes`: List of animal classes to detect (optional).
 - `--save_crops`: Save cropped animal images (default: True).
 
-For a full list of arguments:
-```bash
-python detect_animals.py --help
+
 ```
 
 ---
