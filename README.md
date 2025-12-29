@@ -103,9 +103,7 @@ GitHub restricts individual file sizes to **100 MB**, and this project uses larg
 ### How to use your own videos:
 - Download or record any animal video (`.mp4`, `.avi`)
 - Place it inside a local folder (e.g. `videos/`)
-- Run the detection script with:
-```bash
-python detect_animals.py --video_path path/to/your/video.mp4
+- Run the detection script with: python detect_animals.py --video_path path/to/your/video.mp4
 
 ---
 ## 🤗 Credits
