@@ -1,53 +1,124 @@
-# Real-Time Animal Detection in Videos using DETR 🐶🐱🦓
-This project demonstrates real-time animal detection in videos using DETR (DEtection TRansformer).
+# 🐶🐱🦓 Real-Time Animal Detection in Videos using DETR
 
-DETR is an end-to-end object detection model developed by Facebook AI that replaces traditional object detection pipelines (such as Faster R-CNN with anchors and NMS) with a single Transformer-based architecture. It formulates object detection as a set prediction problem using a transformer encoder–decoder and bipartite matching loss. 
+This project demonstrates **real-time animal detection in videos** using **DETR (DEtection TRansformer)**.
+
+DETR is an **end-to-end object detection model** developed by **Facebook AI** that replaces traditional detection pipelines (such as Faster R-CNN with anchors and Non-Maximum Suppression) with a **single Transformer-based architecture**.  
+It formulates object detection as a **set prediction problem** using a **Transformer encoder–decoder** and **bipartite matching loss**, enabling clean detection without post-processing heuristics.
+
+---
 
 ## 🔑 Key Features
-Transformer-based architecture for direct set prediction of object classes and bounding boxes
 
-Eliminates anchors and post-processing heuristics like Non-Maximum Suppression
+- Transformer-based architecture for direct set prediction of object classes and bounding boxes  
+- Eliminates anchors and post-processing heuristics like **Non-Maximum Suppression (NMS)**  
+- Processes video datasets **frame by frame**  
+- Displays **real-time FPS**  
+- Draws **colored bounding boxes** per animal class with confidence scores  
+- Maintains **per-animal detection counts** saved to a CSV file  
+- Estimates **visibility duration per animal** (in seconds)  
+- Modular and easy to customize (classes, thresholds, speed)  
+- Saves **cropped images** of detected animals for further analysis  
 
-Processes video datasets frame by frame
+---
 
-Displays real-time FPS
+## 🛠️ Installation
 
-Draws colored bounding boxes per animal class with confidence scores
-
-Maintains per-animal detection counts saved to a CSV file
-
-Estimates detection duration per animal (in seconds)
-
-Modular and easy to customize (thresholds, classes, speed)
-
-Saves cropped images of detected animals for further analysis
-
-## 🛠️ Installation 
-
-1️⃣ Clone the Repository
-```bash 
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/Sarah2553/Detr_detection.git
-cd detr-video-detection
+cd Detr_detection
+```
 
-2️⃣ Create and Activate a Virtual Environment
-python -m venv .venv
+---
 
+### 2️⃣ Create and Activate a Virtual Environment
+We recommend using **venv** to avoid dependency conflicts:
+```bash
+# Create virtual environment
+python3 -m venv venv
 
-Windows
+# Activate (Linux/Mac)
+source venv/bin/activate
 
-.venv\Scripts\activate
+# Activate (Windows)
+venv\Scripts\activate
+```
 
+---
 
-Linux / macOS
+### 3️⃣ Install Required Python Packages
 
-source .venv/bin/activate
+You can install all dependencies using the provided `requirements.txt`:
 
-3️⃣ Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
 
-▶️ Running the Project
+Make sure you have **PyTorch** installed. If you have a GPU, install the corresponding CUDA version from [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/).
 
-Place your input video inside the video/ directory, then run:
-bash
-python video_detr_detection.py
+---
+
+### 4️⃣ Download/Prepare Video Data
+
+- Place your video files (e.g., `.mp4`, `.avi`) in a directory, e.g., `videos/`.
+- You can use any video – the detection code will process every frame.
+
+---
+
+### 5️⃣ Run Real-Time Animal Detection
+
+Execute the main detection script as follows:
+
+```bash
+python detect_animals.py --video_path path/to/your/video.mp4
+```
+
+#### Common Options:
+- `--video_path`: Path to the input video file.
+- `--output_dir`: Directory to save detection results, CSVs, and cropped images.
+- `--conf_thresh`: Minimum confidence score to display/buffer detections (default: 0.7).
+- `--filter_classes`: List of animal classes to detect (optional).
+- `--save_crops`: Save cropped animal images (default: True).
+
+For a full list of arguments:
+```bash
+python detect_animals.py --help
+```
+
+---
+
+### 6️⃣ Results
+
+- **FPS, per-class bounding boxes, and animal counts** are printed/displayed during playback.
+- **Detection CSV** (`detections.csv`) summarizes counts, duration, and details.
+- **Cropped images** are stored per class for further analysis.
+
+---
+
+## 🧩 Customization
+
+- Edit the `CLASSES` list in the config/script to change or expand the set of detectable animals.
+- Adjust confidence and NMS thresholds using command-line arguments.
+- Use your own DETR model weights for fine-tuned performance.
+
+---
+
+## 📄 License
+
+See [LICENSE](LICENSE) for details.
+
+---
+
+## 🤗 Credits
+
+- Facebook AI Research for DETR ([paper](https://arxiv.org/abs/2005.12872), [official repo](https://github.com/facebookresearch/detr))
+- PyTorch Ecosystem
+- Open-source contributors
+
+---
+
+## ❓ Questions
+
+Feel free to open issues or discussions for bug reports and enhancement ideas!
+
+
