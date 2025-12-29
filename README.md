@@ -107,7 +107,7 @@ GitHub restricts individual file sizes to **100 MB**, and this project uses larg
 ```bash
 python detect_animals.py --video_path path/to/your/video.mp4
 
-
+---
 ## 🤗 Credits
 
 - Facebook AI Research for DETR ([paper](https://arxiv.org/abs/2005.12872), [official repo](https://github.com/facebookresearch/detr))
