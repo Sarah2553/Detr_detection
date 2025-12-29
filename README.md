@@ -70,7 +70,7 @@ Make sure you have **PyTorch** installed. If you have a GPU, install the corresp
 Execute the main detection script as follows:
 
 ```bash
-python detect_animals.py --video_path path/to/your/video.mp4
+python video_detr_detection.py --video_path path/to/your/video.mp4
 ```
 
 #### Common Options:
@@ -90,7 +90,7 @@ python detect_animals.py --help
 ### 6️⃣ Results
 
 - **FPS, per-class bounding boxes, and animal counts** are printed/displayed during playback.
-- **Detection CSV** (`detections.csv`) summarizes counts, duration, and details.
+- **Detection CSV** (`detection_stats.csv`) summarizes counts, duration, and details.
 - **Cropped images** are stored per class for further analysis.
 
 ---
@@ -106,14 +106,6 @@ GitHub restricts individual file sizes to **100 MB**, and this project uses larg
 - Run the detection script with:
 ```bash
 python detect_animals.py --video_path path/to/your/video.mp4
-
-## 🧩 Customization
-
-- Edit the `CLASSES` list in the config/script to change or expand the set of detectable animals.
-- Adjust confidence and NMS thresholds using command-line arguments.
-- Use your own DETR model weights for fine-tuned performance.
-
----
 
 
 ## 🤗 Credits
