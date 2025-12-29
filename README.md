@@ -94,6 +94,18 @@ python detect_animals.py --help
 - **Cropped images** are stored per class for further analysis.
 
 ---
+## 📦 Dataset & Video Files
+
+Due to **GitHub file size limitations**, large video files (`.mp4`, `.avi`) used for testing and demonstration **are not included in this repository**.
+
+GitHub restricts individual file sizes to **100 MB**, and this project uses larger video files for real-time detection.
+
+### How to use your own videos:
+- Download or record any animal video (`.mp4`, `.avi`)
+- Place it inside a local folder (e.g. `videos/`)
+- Run the detection script with:
+```bash
+python detect_animals.py --video_path path/to/your/video.mp4
 
 ## 🧩 Customization
 
